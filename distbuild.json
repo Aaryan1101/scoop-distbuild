@@ -10,15 +10,7 @@
     }
   },
   "extract_dir": "",
-  "bin": "distbuild.bat",
-  "post_install": [
-    "# Create distbuild.bat launcher",
-    "$dir = $original_dir",
-    "$jar = Get-ChildItem $dir -Filter \"distbuild-*.jar\" | Select-Object -First 1",
-    "$bin = \"$dir\\distbuild.bat\"",
-    "",
-    "New-Item -Path $bin -Value \"@echo off`r`nsetlocal`r`nset DISTBUILD_JVM_OPTS=-Xmx512m`r`njava %DISTBUILD_JVM_OPTS% -jar `\"$($jar.FullName)`\" %*`r`nendlocal\" -Force"
-  ],
+  "bin": "distbuild-1.1.4.jar",
   "suggest": {
     "java": "java/openjdk",
     "redis": "redis-64"
