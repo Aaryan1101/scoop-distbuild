@@ -6,7 +6,7 @@
   "architecture": {
     "64bit": {
       "url": "https://github.com/Aaryan1101/distbuild/releases/download/v1.1.4/distbuild-1.1.4.jar",
-      "hash": "sha256:b3f9f39fa1a9c27ae6f253323e68218e7abc41f7317e60927856f9d9c619ca55"
+      "hash": "sha256:2f31f9a642557857796a4029a0f3835910f7e6111b0528e05d55dc9b037cdc59"
     }
   },
   "extract_dir": "",
