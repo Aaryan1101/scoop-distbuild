@@ -17,11 +17,7 @@
     "$jar = Get-ChildItem $dir -Filter \"distbuild-*.jar\" | Select-Object -First 1",
     "$bin = \"$dir\\distbuild.bat\"",
     "",
-    "\"@echo off\" | Out-File -FilePath $bin -Encoding ascii",
-    "\"setlocal\" | Out-File -FilePath $bin -Encoding ascii -Append",
-    "\"set DISTBUILD_JVM_OPTS=-Xmx512m\" | Out-File -FilePath $bin -Encoding ascii -Append",
-    "\"java %DISTBUILD_JVM_OPTS% -jar \\\"$($jar.FullName)\\\" %*\" | Out-File -FilePath $bin -Encoding ascii -Append",
-    "\"endlocal\" | Out-File -FilePath $bin -Encoding ascii -Append"
+    "New-Item -Path $bin -Value \"@echo off`r`nsetlocal`r`nset DISTBUILD_JVM_OPTS=-Xmx512m`r`njava %DISTBUILD_JVM_OPTS% -jar `\"$($jar.FullName)`\" %*`r`nendlocal\" -Force"
   ],
   "suggest": {
     "java": "java/openjdk",
