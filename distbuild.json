@@ -1,12 +1,12 @@
 {
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "Distributed Java build system. Speeds up Gradle builds by distributing compilation tasks across multiple machines on your local network.",
   "homepage": "https://github.com/Aaryan1101/distbuild",
   "license": "Apache-2.0",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/Aaryan1101/distbuild/releases/download/v1.1.3/distbuild-1.1.3.jar",
-      "hash": "sha256:06cd544d05b0ba7baa285133389b3a0e0a678689fa503fb7776fbcddf9ebe3fd"
+      "url": "https://github.com/Aaryan1101/distbuild/releases/download/v1.1.4/distbuild-1.1.4.jar",
+      "hash": "sha256:b3f9f39fa1a9c27ae6f253323e68218e7abc41f7317e60927856f9d9c619ca55"
     }
   },
   "extract_dir": "",
