@@ -1,11 +1,11 @@
 {
-  "version": "1.1.2",
+  "version": "1.1.4",
   "description": "Distributed Java build system. Speeds up Gradle builds by distributing compilation tasks across multiple machines on your local network.",
   "homepage": "https://github.com/Aaryan1101/distbuild",
   "license": "Apache-2.0",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/Aaryan1101/distbuild/releases/download/v1.1.2/distbuild-1.1.2.jar",
+      "url": "https://github.com/Aaryan1101/distbuild/releases/download/v1.1.4/distbuild-1.1.4.jar",
       "hash": "sha256:PLACEHOLDER_SHA256_HERE"
     }
   },
@@ -14,12 +14,13 @@
   "post_install": [
     "# Create distbuild.bat launcher",
     "$dir = $original_dir",
+    "$jar = Get-ChildItem $dir -Filter \"distbuild-*.jar\" | Select-Object -First 1",
     "$bin = \"$dir\\distbuild.bat\"",
     "",
     "\"@echo off\" | Out-File -FilePath $bin -Encoding ascii",
     "\"setlocal\" | Out-File -FilePath $bin -Encoding ascii -Append",
     "\"set DISTBUILD_JVM_OPTS=-Xmx512m\" | Out-File -FilePath $bin -Encoding ascii -Append",
-    "\"java %DISTBUILD_JVM_OPTS% -jar \"$dir\\distbuild.jar\" %*\" | Out-File -FilePath $bin -Encoding ascii -Append",
+    "\"java %DISTBUILD_JVM_OPTS% -jar \\\"$($jar.FullName)\\\" %*\" | Out-File -FilePath $bin -Encoding ascii -Append",
     "\"endlocal\" | Out-File -FilePath $bin -Encoding ascii -Append"
   ],
   "suggest": {
